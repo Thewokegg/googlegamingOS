@@ -7,19 +7,15 @@ image-version: latest
 modules:
   - type: rpm-ostree
     install:
-      - gnome-tweaks        # Utilidad indispensable para cambiar temas visuales
-      - distrobox           # Para crear entornos aislados de IA acelerados por GPU
-      - git                 # Para descargar los temas Material You desde GitHub
+      - sassc # Herramienta necesaria para compilar el tema visual Orchis
 
   - type: default-flatpaks
     notify: true
     system:
       install:
-        - com.mattjakeman.ExtensionManager # Para instalar la extensión Dash to Panel
-        - org.gnome.Loupe                  # Visor de imágenes moderno
+        - com.mattjakeman.ExtensionManager
+        - org.gnome.Loupe
 
   - type: script
     scripts:
-      # En el siguiente paso crearemos este script para automatizar la instalación
-      # de los temas estilo Google y bordes redondeados.
       - setup-google-theme.sh
