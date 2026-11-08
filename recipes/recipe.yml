@@ -5,10 +5,6 @@ base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 
 modules:
-  - type: rpm-ostree
-    install:
-      - sassc # Herramienta necesaria para compilar el tema visual Orchis
-
   - type: default-flatpaks
     notify: true
     system:
