@@ -5,13 +5,6 @@ base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest
 
 modules:
-  - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - com.mattjakeman.ExtensionManager
-        - org.gnome.Loupe
-
   - type: script
     scripts:
       - setup-google-theme.sh
